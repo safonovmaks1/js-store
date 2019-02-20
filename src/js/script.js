@@ -90,7 +90,7 @@ window.addEventListener('DOMContentLoaded', () => {
                     const str = item.textContent.slice(0, 65) + '...';
                     // const str = `${item.textContent.slice(0, 70)} ...`;
                     item.textContent = str;
-                }
+                } 
             });
         }
         sliceTitle();
