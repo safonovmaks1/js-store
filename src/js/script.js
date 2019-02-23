@@ -41,12 +41,12 @@ window.addEventListener('DOMContentLoaded', () => {
             totalCost = document.querySelector('.cart__total > span'),
             titles = document.querySelectorAll('.goods__title');
 
-        // вызов модального окна
+    // модальное окно
         function openCart() {
             cart.style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
-        // закрытие модального окна по крестику
+        
         function closeCart() {
             cart.style.display = 'none';
             document.body.style.overflow = '';
@@ -57,10 +57,10 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        open.addEventListener('click', openCart);
-        close.addEventListener('click', closeCart);
+        open.addEventListener('click', openCart);   // открытие модального окна
+        close.addEventListener('click', closeCart); // закрытие модального окна
         
-
+    //
         goodsBtn.forEach(function (btn, i) {
             btn.addEventListener('click', () => {
                 let item = products[i].cloneNode(true),
