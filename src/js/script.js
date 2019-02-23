@@ -60,7 +60,6 @@ window.addEventListener('DOMContentLoaded', () => {
         open.addEventListener('click', openCart);   // открытие модального окна
         close.addEventListener('click', closeCart); // закрытие модального окна
         
-    //
         goodsBtn.forEach(function (btn, i) {
             btn.addEventListener('click', () => {
                 let item = products[i].cloneNode(true),
