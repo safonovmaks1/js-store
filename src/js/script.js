@@ -5,7 +5,7 @@ window.addEventListener('DOMContentLoaded', () => {
             .then(json => createElement(json.goods));
 
         callback();
-    }
+    };
 
     function createElement(arr) {
         const goodsWrapper = document.querySelector('.goods__wrapper');
