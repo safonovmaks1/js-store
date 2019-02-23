@@ -50,10 +50,16 @@ window.addEventListener('DOMContentLoaded', () => {
         function closeCart() {
             cart.style.display = 'none';
             document.body.style.overflow = '';
+            window.addEventListener('click', (e) => {
+                if (e.target == cart) {
+                    cart.style.display = 'none';
+                }
+            });
         }
 
         open.addEventListener('click', openCart);
         close.addEventListener('click', closeCart);
+        
 
         goodsBtn.forEach(function (btn, i) {
             btn.addEventListener('click', () => {
