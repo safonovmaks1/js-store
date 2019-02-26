@@ -1,2 +1,2 @@
-Интенсив "Ali-express на JavaScript" | Успешно завершил. 
+Интенсив "Ali-express на JavaScript" | Успешно завершен. 
 Диплом №3054
