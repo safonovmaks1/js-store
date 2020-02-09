@@ -1,5 +1,5 @@
 window.addEventListener('DOMContentLoaded', () => {
-    
+
     const loadContent = async (url, callback) => {
         await fetch(url) // Promise (Обещание)
             .then(response => response.json()) // Promise (Обещание)
@@ -43,12 +43,12 @@ window.addEventListener('DOMContentLoaded', () => {
             totalCost = document.querySelector('.cart__total > span'),
             titles = document.querySelectorAll('.goods__title');
 
-    // модальное окно
+        // модальное окно
         function openCart() {
             cart.style.display = 'block';
             document.body.style.overflow = 'hidden';
         }
-        
+
         function closeCart() {
             cart.style.display = 'none';
             document.body.style.overflow = '';
@@ -61,15 +61,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
         open.addEventListener('click', openCart);
         close.addEventListener('click', closeCart);
-        
-    /*
-        Карточка товара:
-            1. клонирование карточки
-            2. Удаление кнопки "добавить в корзину"
-            3. Добавление крестика закрытия карточки
-            4. Добавление карточки в корзину
-            5. Удаление надписи "Ваша корзина пуста"     
-    */
+
+        /*
+            Карточка товара:
+                1. клонирование карточки
+                2. Удаление кнопки "добавить в корзину"
+                3. Добавление крестика закрытия карточки
+                4. Добавление карточки в корзину
+                5. Удаление надписи "Ваша корзина пуста"     
+        */
         goodsBtn.forEach(function (btn, i) {
             btn.addEventListener('click', () => {
                 let item = products[i].cloneNode(true), // 1
@@ -97,7 +97,7 @@ window.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-    // Обрезка заголовков
+        //! Обрезка заголовков
         function sliceTitle() {
             titles.forEach(function (item) {
                 if (item.textContent.length < 65) {
@@ -106,12 +106,12 @@ window.addEventListener('DOMContentLoaded', () => {
                     const str = item.textContent.slice(0, 65) + '...';
                     // const str = `${item.textContent.slice(0, 70)} ...`;
                     item.textContent = str;
-                } 
+                }
             });
         }
         sliceTitle();
 
-    // Анимация иконки добавления в корзину товара
+        // Анимация иконки добавления в корзину товара
         function showConfirm() {
             confirm.style.display = 'block';
             let counter = 100;
@@ -129,13 +129,13 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-    // Отображение количества товара в корзине на бейдже
+        // Отображение количества товара в корзине на бейдже
         function calcGoods(i) {
             const items = cartWrapper.querySelectorAll('.goods__item');
             badge.textContent = i + items.length;
         }
 
-    // Подсчет общей стоимости
+        // Подсчет общей стоимости
         function calcTotal() {
             const prices = document.querySelectorAll('.cart__wrapper > .goods__item > .goods__price > span'),
                 empty = cartWrapper.querySelector('.empty');
@@ -149,7 +149,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-    // Удаление карточки из корзины
+        // Удаление карточки из корзины
         function removeFromCart() {
             const removeBtn = cartWrapper.querySelectorAll('.goods__item-remove');
             removeBtn.forEach(function (btn) {
